@@ -32,50 +32,13 @@ Predicted positions are compared against reference genome annotations from **NCB
 2. **Cumulative Metrics:** Tracks cumulative GC and AT skew to identify shifts in nucleotide composition.  
 3. **Visualization:** Generates plots for all indicators with predicted Ori and Ter marked.  
 4. **Reference Comparison:** Calculates circular distances between predicted and reference positions and assesses reliability.  
-5. **Educational:** Includes formulas and detailed explanations for each metric in LaTeX.
+5. **Educational:** Includes formulas and detailed explanations for each metric.
 
 ---
 
 ## Methodology
 
 ### 1. GC and AT Skews
+GC Skew = (G - C) / (G + C)
 
 - **GC skew:**  
-\[
-\text{GC Skew} = \frac{G - C}{G + C}
-\]  
-- **AT skew:**  
-\[
-\text{AT Skew} = \frac{A - T}{A + T}
-\]  
-Cumulative skew is the running sum of the respective skew along the genome.
-
-### 2. Nucleotide Densities
-
-\[
-\text{G Density} = \frac{G}{\text{window size}}, \quad
-\text{C Density} = \frac{C}{\text{window size}}
-\]
-
-### 3. Ratios
-
-\[
-\text{G/C Ratio} = \frac{G}{C}, \quad
-\text{GC/AT Ratio} = \frac{G+C}{A+T}
-\]
-
-### 4. Window Position
-
-\[
-\text{Position} = i + \frac{\text{window size}}{2}
-\]
-
----
-
-## Installation
-
-1. Clone this repository:
-
-```bash
-git clone https://github.com/yourusername/Ecoli_OriTer_Analysis.git
-cd Ecoli_OriTer_Analysis
