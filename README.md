@@ -9,36 +9,47 @@
 
 ## Project Overview
 
-This repository contains a comprehensive bioinformatics project aimed at detecting **replication origin (Ori)** and **terminus (Ter)** positions in the *Escherichia coli* K-12 MG1655 genome. Accurate identification of Ori and Ter is essential for understanding genome replication, replication timing, and nucleotide composition biases.
+This project detects the **origin of replication (Ori)** and **terminus (Ter)** in the *Escherichia coli* K-12 MG1655 genome.  
+Accurate identification of Ori and Ter is crucial for understanding genome replication, replication timing, and nucleotide composition patterns.
 
-The project leverages multiple computational indicators:
-
-- GC skew and cumulative GC skew
-- AT skew and cumulative AT skew
-- G and C nucleotide densities
-- Nucleotide ratios: G/C and (G+C)/(A+T)
-
-Predicted positions are compared against reference genome annotations from **NCBI** and **EcoCyc**.
+We use multiple computational indicators to predict Ori/Ter positions and compare them with reference annotations from **NCBI** and **EcoCyc**.
 
 **Genome reference:**  
-[NC_000913.3 - E. coli K-12 MG1655, complete genome](https://www.ncbi.nlm.nih.gov/nuccore/556503834)  
-[oriC site in EcoCyc](https://ecocyc.org/ECOLI/NEW-IMAGE?type=EXTRAGENIC-SITE&object=G0-10506)
+- [NC_000913.3 - E. coli K-12 MG1655, complete genome](https://www.ncbi.nlm.nih.gov/nuccore/556503834)  
+- [oriC site in EcoCyc](https://ecocyc.org/ECOLI/NEW-IMAGE?type=EXTRAGENIC-SITE&object=G0-10506)
 
 ---
 
-## Features
+## Indicators Used
 
-1. **Sliding Window Analysis:** Computes GC/AT skew, densities, and ratios over defined windows along the genome.  
-2. **Cumulative Metrics:** Tracks cumulative GC and AT skew to identify shifts in nucleotide composition.  
-3. **Visualization:** Generates plots for all indicators with predicted Ori and Ter marked.  
-4. **Reference Comparison:** Calculates circular distances between predicted and reference positions and assesses reliability.  
-5. **Educational:** Includes formulas and detailed explanations for each metric.
+1. **GC Skew**  
+   Measures the imbalance between guanine (G) and cytosine (C) nucleotides in a sliding window along the genome. Shifts in GC skew often indicate Ori/Ter regions.
+
+2. **Cumulative GC Skew**  
+   Tracks the running sum of GC skew to highlight large-scale nucleotide composition shifts.
+
+3. **AT Skew**  
+   Measures the imbalance between adenine (A) and thymine (T) nucleotides. Similar to GC skew, AT skew can indicate replication origins or termini.
+
+4. **Cumulative AT Skew**  
+   Running sum of AT skew to detect global trends along the genome.
+
+5. **G and C Densities**  
+   Fraction of guanine and cytosine nucleotides in each window. Local density variations often correlate with replication-related features.
+
+6. **G/C Ratio**  
+   Compares the relative abundance of G to C nucleotides. Helps detect local nucleotide composition biases.
+
+7. **GC/AT Ratio**  
+   Compares the combined abundance of G and C to that of A and T nucleotides. Useful for identifying replication-associated asymmetries.
 
 ---
 
-## Methodology
+## Installation
 
-### 1. GC and AT Skews
-GC Skew = (G - C) / (G + C)
+1. Clone repository:
 
-- **GC skew:**  
+```bash
+git clone https://github.com/AlirezaLashkar/Ecoli_OriTer_Analysis.git
+cd Ecoli_OriTer_Analysis
+
