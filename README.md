@@ -1,6 +1,6 @@
 # Ori/Ter Detection in Escherichia coli K-12 MG1655
 
-**Author:** Alireza Lashkarblouki  
+**Author:** Alireza Lashkarbolooki  
 **Degree:** M.Sc. Bioinformatics, Sharif University of Technology  
 **Course:** Introduction to Bioinformatics, Dr. Ali Sharifi Zarchi  
 **Date:** October 20, 2025
